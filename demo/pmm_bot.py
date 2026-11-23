@@ -256,8 +256,9 @@ def main() -> None:
             placed_asks = []
             for idx in range(LEVELS_PER_SIDE):
                 offset_bps = BASE_SPREAD_BPS + idx * LEVEL_STEP_BPS
-                bid_px = round(quote_mid * (1.0 - offset_bps / 10_000.0), price_scale)
-                ask_px = round(quote_mid * (1.0 + offset_bps / 10_000.0), price_scale)
+                eff_price_scale = 0 if quote_mid >= 1_000_000 else price_scale
+                bid_px = round(quote_mid * (1.0 - offset_bps / 10_000.0), eff_price_scale)
+                ask_px = round(quote_mid * (1.0 + offset_bps / 10_000.0), eff_price_scale)
 
                 bid_qty = max(min_qty, round((per_order_notional * fx_rate) / bid_px, qty_scale))
                 ask_qty = max(min_qty, round((per_order_notional * fx_rate) / ask_px, qty_scale))
