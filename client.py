@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 import base64
+import hashlib
+import hmac
 import json
+import time
 from typing import Any, Dict, Optional
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlencode, urlparse, urlunparse
 
 import requests
 
@@ -59,6 +62,8 @@ class BaseClient:
         password: str = "",
         token: Optional[str] = None,
         refresh_token: Optional[str] = None,
+        api_key: Optional[str] = None,
+        api_secret: Optional[str] = None,
         session_key: str = "",
         timeout: float = 10.0,
         auto_refresh: bool = True,
@@ -68,13 +73,15 @@ class BaseClient:
         self.password = password
         self.token = token
         self.refresh_token = refresh_token
+        self.api_key = api_key
+        self.api_secret = api_secret
         self.session_key = session_key
         self.timeout = timeout
         self.auto_refresh = auto_refresh
         self.user_id: Optional[int] = _decode_jwt_user_id(token) if token else None
         self.http = requests.Session()
 
-        if not self.token and self.username and self.password:
+        if not self.token and not (self.api_key and self.api_secret) and self.username and self.password:
             self.login()
 
     @property
@@ -132,8 +139,11 @@ class BaseClient:
 
     def _headers(self, auth: bool = True) -> Dict[str, str]:
         headers: Dict[str, str] = {"Content-Type": "application/json"}
-        if auth and self.token:
-            headers["Authorization"] = f"Bearer {self.token}"
+        if auth:
+            if self.api_key and self.api_secret:
+                headers["X-MBX-APIKEY"] = self.api_key
+            elif self.token:
+                headers["Authorization"] = f"Bearer {self.token}"
         return headers
 
     def _parse_response(self, resp: requests.Response) -> Any:
@@ -156,12 +166,35 @@ class BaseClient:
         json_body: Optional[Dict[str, Any]] = None,
         auth: bool = True,
     ) -> Any:
-        """Execute an HTTP request with automatic token refresh on 401."""
-        if auth and not self.token:
+        """Execute an HTTP request with JWT auto-refresh or HMAC API key signing."""
+        use_api_key = auth and bool(self.api_key and self.api_secret)
+        if auth and not use_api_key and not self.token:
             self.login()
 
         url = f"{self.base_url}{path}"
         clean_params = {k: v for k, v in (params or {}).items() if v is not None}
+
+        if use_api_key:
+            clean_params["timestamp"] = int(time.time() * 1000)
+            qs = urlencode(clean_params)
+            raw_body = json.dumps(json_body, separators=(",", ":")) if json_body is not None else ""
+            payload = qs + raw_body
+            sig = hmac.new(
+                self.api_secret.encode("utf-8"),  # type: ignore[union-attr]
+                payload.encode("utf-8"),
+                hashlib.sha256,
+            ).hexdigest()
+            clean_params["signature"] = sig
+            resp = self.http.request(
+                method=method.upper(),
+                url=url,
+                params=clean_params,
+                data=raw_body if json_body is not None else None,
+                headers=self._headers(auth=auth),
+                timeout=self.timeout,
+            )
+            return self._parse_response(resp)
+
         resp = self.http.request(
             method=method.upper(),
             url=url,
