@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import datetime
 import json
 import os
 import signal
@@ -10,6 +11,7 @@ import threading
 import time
 from typing import Optional
 
+import requests
 import websocket  # websocket-client
 
 from _sdk_loader import load_sdk
@@ -34,6 +36,78 @@ REFRESH_INTERVAL_SEC = float(os.getenv("PMM_REFRESH_SEC", "5"))
 SIDE_NOTIONAL_USDT = float(os.getenv("PMM_SIDE_NOTIONAL_USDT", "10000"))
 BASE_SPREAD_BPS = float(os.getenv("PMM_SPREAD_BPS", "5"))
 LEVEL_STEP_BPS = float(os.getenv("PMM_STEP_BPS", "5"))
+
+VCB_API_URL = os.getenv("VCB_API_URL", "https://www.vietcombank.com.vn/api/exchangerates")
+VCB_RATE_TYPE = os.getenv("VCB_RATE_TYPE", "transfer")  # cash | transfer | sell
+FX_REFRESH_SEC = float(os.getenv("FX_REFRESH_SEC", "3600"))  # 1 hour
+USE_VCB_FX = os.getenv("USE_VCB_FX", "auto").lower()
+
+
+class VietcombankFXFeed:
+    """Fetches USD->VND rate from Vietcombank and refreshes every FX_REFRESH_SEC (default 1h)."""
+
+    def __init__(
+        self,
+        api_url: str = VCB_API_URL,
+        rate_type: str = VCB_RATE_TYPE,
+        refresh_sec: float = FX_REFRESH_SEC,
+    ) -> None:
+        self.api_url = api_url
+        self.rate_type = rate_type
+        self.refresh_sec = refresh_sec
+        self._lock = threading.Lock()
+        self._rate: Optional[float] = None
+        self._updated_at: float = 0.0
+        self._stop_event = threading.Event()
+        self._thread: Optional[threading.Thread] = None
+
+    def fetch_once(self) -> Optional[float]:
+        today = datetime.date.today().strftime("%Y-%m-%d")
+        try:
+            resp = requests.get(
+                self.api_url,
+                params={"date": today},
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            usd = next(
+                (item for item in data.get("Data", []) if item.get("currencyCode") == "USD"),
+                None,
+            )
+            if usd:
+                raw_val = str(usd.get(self.rate_type) or usd.get("transfer") or "").replace(",", "")
+                rate = float(raw_val)
+                if rate > 0:
+                    with self._lock:
+                        self._rate = rate
+                        self._updated_at = time.time()
+                    print(
+                        f"[VCB FX] Updated USD/VND ({self.rate_type}) = {rate:,.2f} "
+                        f"(source_updated={data.get('UpdatedDate')})",
+                        flush=True,
+                    )
+                    return rate
+        except Exception as exc:
+            print(f"[VCB FX] fetch error: {exc}", file=sys.stderr, flush=True)
+        return None
+
+    def start(self) -> None:
+        self.fetch_once()
+        self._thread = threading.Thread(target=self._run, daemon=True)
+        self._thread.start()
+
+    def stop(self) -> None:
+        self._stop_event.set()
+
+    def get_rate(self) -> Optional[float]:
+        with self._lock:
+            return self._rate
+
+    def _run(self) -> None:
+        while not self._stop_event.wait(self.refresh_sec):
+            self.fetch_once()
 
 
 class BinanceMidPriceFeed:
@@ -129,6 +203,16 @@ def main() -> None:
     feed = BinanceMidPriceFeed()
     feed.start()
 
+    use_fx = USE_VCB_FX in ("1", "true", "yes") or (
+        USE_VCB_FX == "auto" and SYMBOL.upper().endswith("_VND")
+    )
+    fx_feed: Optional[VietcombankFXFeed] = None
+    if use_fx:
+        fx_feed = VietcombankFXFeed()
+        fx_feed.start()
+        if fx_feed.get_rate() is None:
+            raise SystemExit("[VCB FX] Failed to fetch initial USD/VND rate.")
+
     stop_event = threading.Event()
 
     def _handle_signal(_sig: int, _frame: object) -> None:
@@ -154,6 +238,14 @@ def main() -> None:
                 stop_event.wait(1.0)
                 continue
 
+            fx_rate = fx_feed.get_rate() if fx_feed else 1.0
+            if fx_rate is None or fx_rate <= 0:
+                print("[PMM] Waiting for valid USD/VND FX rate...", flush=True)
+                stop_event.wait(1.0)
+                continue
+
+            quote_mid = mid * fx_rate
+
             # Cancel existing open orders before replacing
             try:
                 client.cancel_all_orders(SYMBOL)
@@ -164,11 +256,11 @@ def main() -> None:
             placed_asks = []
             for idx in range(LEVELS_PER_SIDE):
                 offset_bps = BASE_SPREAD_BPS + idx * LEVEL_STEP_BPS
-                bid_px = round(mid * (1.0 - offset_bps / 10_000.0), price_scale)
-                ask_px = round(mid * (1.0 + offset_bps / 10_000.0), price_scale)
+                bid_px = round(quote_mid * (1.0 - offset_bps / 10_000.0), price_scale)
+                ask_px = round(quote_mid * (1.0 + offset_bps / 10_000.0), price_scale)
 
-                bid_qty = max(min_qty, round(per_order_notional / bid_px, qty_scale))
-                ask_qty = max(min_qty, round(per_order_notional / ask_px, qty_scale))
+                bid_qty = max(min_qty, round((per_order_notional * fx_rate) / bid_px, qty_scale))
+                ask_qty = max(min_qty, round((per_order_notional * fx_rate) / ask_px, qty_scale))
 
                 try:
                     b_res = client.limit_buy(
@@ -189,9 +281,10 @@ def main() -> None:
             bid_total = sum(px * q for px, q, _ in placed_bids)
             ask_total = sum(px * q for px, q, _ in placed_asks)
             print(
-                f"[PMM] mid={mid:.2f} | bids={len(placed_bids)} (~${bid_total:,.2f}) "
+                f"[PMM] btc_mid={mid:.2f} fx={fx_rate:,.2f} quote_mid={quote_mid:,.2f} | "
+                f"bids={len(placed_bids)} (~{bid_total:,.2f}) "
                 f"{[(px, q) for px, q, _ in placed_bids]} | "
-                f"asks={len(placed_asks)} (~${ask_total:,.2f}) "
+                f"asks={len(placed_asks)} (~{ask_total:,.2f}) "
                 f"{[(px, q) for px, q, _ in placed_asks]}",
                 flush=True,
             )
@@ -201,6 +294,8 @@ def main() -> None:
             stop_event.wait(wait_sec)
     finally:
         feed.stop()
+        if fx_feed:
+            fx_feed.stop()
         try:
             client.cancel_all_orders(SYMBOL)
             print("[PMM] Cleaned up open orders on exit.", flush=True)
