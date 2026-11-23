@@ -24,6 +24,8 @@ BINANCE_WS_URL = os.getenv(
 BASE_URL = os.getenv("THE20_BASE_URL", "https://simulation.the20.sg")
 API_KEY = os.getenv("THE20_API_KEY", "")
 API_SECRET = os.getenv("THE20_API_SECRET", "")
+USERNAME = os.getenv("THE20_USERNAME", "")
+PASSWORD = os.getenv("THE20_PASSWORD", "")
 SESSION_KEY = os.getenv("THE20_SESSION_KEY", "")
 SYMBOL = os.getenv("THE20_SYMBOL", "BTC_VND")
 
@@ -94,15 +96,20 @@ class BinanceMidPriceFeed:
 
 
 def main() -> None:
-    if not API_KEY or not API_SECRET or not SESSION_KEY:
+    has_api_key = bool(API_KEY and API_SECRET)
+    has_user_pass = bool(USERNAME and PASSWORD)
+    if not SESSION_KEY or (not has_api_key and not has_user_pass):
         raise SystemExit(
-            "THE20_API_KEY, THE20_API_SECRET, and THE20_SESSION_KEY env vars are required."
+            "THE20_SESSION_KEY and either (THE20_API_KEY + THE20_API_SECRET) or "
+            "(THE20_USERNAME + THE20_PASSWORD) env vars are required."
         )
 
     client = SpotClient(
         base_url=BASE_URL,
-        api_key=API_KEY,
-        api_secret=API_SECRET,
+        username=USERNAME,
+        password=PASSWORD,
+        api_key=API_KEY or None,
+        api_secret=API_SECRET or None,
         session_key=SESSION_KEY,
     )
 
