@@ -1,0 +1,962 @@
+{
+  "ACC-01": {
+    "account_id": "ACC-01",
+    "nickname": "Mu #1",
+    "label": "mu_acc #1",
+    "strategy_count": 6,
+    "strategies": [
+      {
+        "strategy_id": "STR-001",
+        "name": "Equal-Step Spot Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-037",
+        "name": "Momentum Compression Release",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-053",
+        "name": "Spread Capture with Inventory Cap",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-069",
+        "name": "Imbalance Persistence",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-085",
+        "name": "Regulatory News Reaction",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-091",
+        "name": "Benchmark_STR-091",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-02": {
+    "account_id": "ACC-02",
+    "nickname": "Mu #2",
+    "label": "mu_acc #2",
+    "strategy_count": 6,
+    "strategies": [
+      {
+        "strategy_id": "STR-002",
+        "name": "Volatility-Scaled Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-038",
+        "name": "Momentum Retest Entry",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-054",
+        "name": "Micro Pullback Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-070",
+        "name": "Spoof-Resistant Flow Filter",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-086",
+        "name": "Exchange Incident Event Filter",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-092",
+        "name": "Benchmark_STR-092",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-03": {
+    "account_id": "ACC-03",
+    "nickname": "Mu #3",
+    "label": "mu_acc #3",
+    "strategy_count": 6,
+    "strategies": [
+      {
+        "strategy_id": "STR-003",
+        "name": "ATR Adaptive Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-039",
+        "name": "Multi-Timeframe Momentum",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-055",
+        "name": "Short-Horizon VWAP Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-071",
+        "name": "Synchronized Best-Bid/Ask Spread",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-087",
+        "name": "BTC Network Event Filter",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-093",
+        "name": "Benchmark_STR-093",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-04": {
+    "account_id": "ACC-04",
+    "nickname": "Mu #4",
+    "label": "mu_acc #4",
+    "strategy_count": 6,
+    "strategies": [
+      {
+        "strategy_id": "STR-004",
+        "name": "Session-Boundary Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-040",
+        "name": "Volatility-Normalized Momentum",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-056",
+        "name": "Quote-Refresh Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-072",
+        "name": "Cross-Venue Midprice Dislocation",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-088",
+        "name": "Liquidation-Event Response",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-094",
+        "name": "Benchmark_STR-094",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-05": {
+    "account_id": "ACC-05",
+    "nickname": "Mu #5",
+    "label": "mu_acc #5",
+    "strategy_count": 6,
+    "strategies": [
+      {
+        "strategy_id": "STR-005",
+        "name": "Trend-Filtered Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-021",
+        "name": "EMA Pullback Continuation",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-057",
+        "name": "Queue-Ahead Decay Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-073",
+        "name": "Lead-Lag Price Catch-Up",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-089",
+        "name": "Timestamped Headline Momentum",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-095",
+        "name": "Benchmark_STR-095",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-06": {
+    "account_id": "ACC-06",
+    "nickname": "Mu #6",
+    "label": "mu_acc #6",
+    "strategy_count": 6,
+    "strategies": [
+      {
+        "strategy_id": "STR-006",
+        "name": "Inventory-Balanced Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-022",
+        "name": "Dual-EMA Trend Alignment",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-058",
+        "name": "Trade-Impulse Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-074",
+        "name": "Venue Premium Mean Reversion",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-090",
+        "name": "Post-Event Reversion",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      },
+      {
+        "strategy_id": "STR-096",
+        "name": "Benchmark_STR-096",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-07": {
+    "account_id": "ACC-07",
+    "nickname": "Mu #7",
+    "label": "mu_acc #7",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-007",
+        "name": "Asymmetric Bid-Heavy Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-023",
+        "name": "ADX Trend Strength",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-059",
+        "name": "Volatility-Gated Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-075",
+        "name": "Cross-Venue Bid Lift Arbitrage",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-097",
+        "name": "Benchmark_STR-097",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-08": {
+    "account_id": "ACC-08",
+    "nickname": "Mu #8",
+    "label": "mu_acc #8",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-008",
+        "name": "Asymmetric Ask-Heavy Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-024",
+        "name": "Supertrend Pullback",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-060",
+        "name": "Latency-Aware Passive Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-076",
+        "name": "Cross-Venue Ask Hit Arbitrage",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-098",
+        "name": "Benchmark_STR-098",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-09": {
+    "account_id": "ACC-09",
+    "nickname": "Mu #9",
+    "label": "mu_acc #9",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-009",
+        "name": "Range-Expansion Grid",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-025",
+        "name": "Donchian Trend Continuation",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-041",
+        "name": "Resistance Retest Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-077",
+        "name": "Latency-Adjusted Dislocation",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-099",
+        "name": "Benchmark_STR-099",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-10": {
+    "account_id": "ACC-10",
+    "nickname": "Mu #10",
+    "label": "mu_acc #10",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-010",
+        "name": "Grid Pause-and-Resume",
+        "family": "Grid / DCA",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-026",
+        "name": "Higher-High Higher-Low Trend",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-042",
+        "name": "Support Breakdown Retest",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-078",
+        "name": "Fee-Adjusted Net Spread",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      },
+      {
+        "strategy_id": "STR-100",
+        "name": "Benchmark_STR-100",
+        "family": "Behavioral / Gambling",
+        "role": "Benchmark",
+        "allocated_capital_vnd": 0.0,
+        "status": "PAPER_ONLY"
+      }
+    ]
+  },
+  "ACC-11": {
+    "account_id": "ACC-11",
+    "nickname": "Mu #11",
+    "label": "mu_acc #11",
+    "strategy_count": 4,
+    "strategies": [
+      {
+        "strategy_id": "STR-011",
+        "name": "Bollinger Lower-Band Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-027",
+        "name": "Moving-Average Slope Trend",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-043",
+        "name": "Donchian Channel Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-079",
+        "name": "Inventory-Rebalancing Arbitrage",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      }
+    ]
+  },
+  "ACC-12": {
+    "account_id": "ACC-12",
+    "nickname": "Mu #12",
+    "label": "mu_acc #12",
+    "strategy_count": 4,
+    "strategies": [
+      {
+        "strategy_id": "STR-012",
+        "name": "RSI Oversold Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-028",
+        "name": "Trend + Volume Confirmation",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-044",
+        "name": "Opening-Range Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-080",
+        "name": "Partial-Fill-Aware Arbitrage",
+        "family": "Cross-Exchange Arbitrage",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      }
+    ]
+  },
+  "ACC-13": {
+    "account_id": "ACC-13",
+    "nickname": "Mu #13",
+    "label": "mu_acc #13",
+    "strategy_count": 4,
+    "strategies": [
+      {
+        "strategy_id": "STR-013",
+        "name": "Z-Score Fair-Value Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-029",
+        "name": "Multi-Timeframe Trend Filter",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-045",
+        "name": "Volatility Compression Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-061",
+        "name": "Top-of-Book Imbalance",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "ACC-14": {
+    "account_id": "ACC-14",
+    "nickname": "Mu #14",
+    "label": "mu_acc #14",
+    "strategy_count": 4,
+    "strategies": [
+      {
+        "strategy_id": "STR-014",
+        "name": "VWAP Deviation Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-030",
+        "name": "Volatility-Adjusted Trend",
+        "family": "Trend Following",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-046",
+        "name": "Volume Expansion Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-062",
+        "name": "Multi-Level Book Imbalance",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "ACC-15": {
+    "account_id": "ACC-15",
+    "nickname": "Mu #15",
+    "label": "mu_acc #15",
+    "strategy_count": 4,
+    "strategies": [
+      {
+        "strategy_id": "STR-015",
+        "name": "Keltner Channel Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-031",
+        "name": "ROC Acceleration Pullback",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-047",
+        "name": "ATR Buffer Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-063",
+        "name": "Bid Depth Accumulation",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "ACC-16": {
+    "account_id": "ACC-16",
+    "nickname": "Mu #16",
+    "label": "mu_acc #16",
+    "strategy_count": 4,
+    "strategies": [
+      {
+        "strategy_id": "STR-016",
+        "name": "Range-Extreme Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-032",
+        "name": "MACD Histogram Momentum",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-048",
+        "name": "Failed-Breakout Reversal Filter",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-064",
+        "name": "Ask Depth Depletion",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 22500000.0,
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "ACC-17": {
+    "account_id": "ACC-17",
+    "nickname": "Mu #17",
+    "label": "mu_acc #17",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-017",
+        "name": "Stochastic Oversold Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-033",
+        "name": "RSI Momentum Continuation",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-049",
+        "name": "Multi-Timeframe Level Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-065",
+        "name": "Order-Flow Delta Confirmation",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-081",
+        "name": "Macro Calendar Volatility Filter",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      }
+    ]
+  },
+  "ACC-18": {
+    "account_id": "ACC-18",
+    "nickname": "Mu #18",
+    "label": "mu_acc #18",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-018",
+        "name": "Volume-Confirmed Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-034",
+        "name": "Volume-Weighted Momentum",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-050",
+        "name": "Range Close Confirmation Breakout",
+        "family": "Breakout",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-066",
+        "name": "Trade-Through Pressure",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-082",
+        "name": "US CPI Event Response",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      }
+    ]
+  },
+  "ACC-19": {
+    "account_id": "ACC-19",
+    "nickname": "Mu #19",
+    "label": "mu_acc #19",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-019",
+        "name": "Failed-Breakout Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-035",
+        "name": "Relative Strength Burst",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-051",
+        "name": "Best-Bid Queue Rebate Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-067",
+        "name": "Book Replenishment Signal",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-083",
+        "name": "FOMC Event Response",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      }
+    ]
+  },
+  "ACC-20": {
+    "account_id": "ACC-20",
+    "nickname": "Mu #20",
+    "label": "mu_acc #20",
+    "strategy_count": 5,
+    "strategies": [
+      {
+        "strategy_id": "STR-020",
+        "name": "Multi-Signal Mean Reversion",
+        "family": "Mean Reversion",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-036",
+        "name": "Short-Term Momentum Rotation",
+        "family": "Momentum",
+        "role": "Core",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-052",
+        "name": "Best-Ask Queue Rebate Scalping",
+        "family": "Scalping",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-068",
+        "name": "Liquidity Vacuum Detection",
+        "family": "Order Flow",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "ACTIVE"
+      },
+      {
+        "strategy_id": "STR-084",
+        "name": "ETF Flow Headline Filter",
+        "family": "News / Event",
+        "role": "Conditional",
+        "allocated_capital_vnd": 18000000.0,
+        "status": "DISABLED_DATA_REQUIREMENT"
+      }
+    ]
+  }
+}

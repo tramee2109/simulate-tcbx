@@ -1,0 +1,2240 @@
+{
+  "system": {
+    "name": "TCEX_BTCVND_MULTI_ACCOUNT_ENGINE",
+    "version": "1.0.0",
+    "mode": "PAPER",
+    "exchange": "TCEX",
+    "market": "SPOT",
+    "symbol": "BTC_VND",
+    "base_asset": "BTC",
+    "quote_asset": "VND",
+    "order_type": "LIMIT",
+    "base_url": "https://simulation.the20.sg",
+    "session_key": "dc1tpbu76rkff8gccfug",
+    "timezone": "UTC"
+  },
+  "capital": {
+    "base_currency": "VND",
+    "account_initial_capital": 150000000.0,
+    "account_deployable_capital": 90000000.0,
+    "account_reserve": 60000000.0,
+    "system_total_initial_capital": 3000000000.0,
+    "system_total_deployable_capital": 1800000000.0,
+    "system_total_reserve": 1200000000.0
+  },
+  "execution": {
+    "allowed_order_types": [
+      "LIMIT"
+    ],
+    "allow_market_orders": false,
+    "allow_short_selling": false,
+    "allow_margin": false,
+    "allow_leverage": false,
+    "maker_fee_bps": 10.0,
+    "taker_fee_bps": 10.0,
+    "tick_size": 0.01,
+    "step_size": 0.01,
+    "price_scale": 2,
+    "qty_scale": 2,
+    "min_qty": 0.01,
+    "max_qty": 1.0,
+    "min_notional_vnd": 10000000.0
+  },
+  "accounts": [
+    {
+      "account_id": "ACC-01",
+      "username": "tmp_dc34ha676rk5eukbqbvg",
+      "nickname": "Mu #1",
+      "label": "mu_acc #1",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_01_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_01_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-02",
+      "username": "tmp_dc34ha676rk5eukbqc00",
+      "nickname": "Mu #2",
+      "label": "mu_acc #2",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_02_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_02_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-03",
+      "username": "tmp_dc34ha676rk5eukbqc0g",
+      "nickname": "Mu #3",
+      "label": "mu_acc #3",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_03_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_03_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-04",
+      "username": "tmp_dc34ha676rk5eukbqc10",
+      "nickname": "Mu #4",
+      "label": "mu_acc #4",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_04_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_04_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-05",
+      "username": "tmp_dc34ha676rk5eukbqc1g",
+      "nickname": "Mu #5",
+      "label": "mu_acc #5",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_05_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_05_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-06",
+      "username": "tmp_dc34ha676rk5eukbqc20",
+      "nickname": "Mu #6",
+      "label": "mu_acc #6",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_06_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_06_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-07",
+      "username": "tmp_dc34ha676rk5eukbqc2g",
+      "nickname": "Mu #7",
+      "label": "mu_acc #7",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_07_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_07_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-08",
+      "username": "tmp_dc34ha676rk5eukbqc30",
+      "nickname": "Mu #8",
+      "label": "mu_acc #8",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_08_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_08_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-09",
+      "username": "tmp_dc34ha676rk5eukbqc3g",
+      "nickname": "Mu #9",
+      "label": "mu_acc #9",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_09_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_09_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-10",
+      "username": "tmp_dc34ha676rk5eukbqc40",
+      "nickname": "Mu #10",
+      "label": "mu_acc #10",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_10_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_10_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-11",
+      "username": "tmp_dc34hae76rk5eukbqc4g",
+      "nickname": "Mu #11",
+      "label": "mu_acc #11",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_11_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_11_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-12",
+      "username": "tmp_dc34hae76rk5eukbqc50",
+      "nickname": "Mu #12",
+      "label": "mu_acc #12",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_12_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_12_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-13",
+      "username": "tmp_dc34hae76rk5eukbqc5g",
+      "nickname": "Mu #13",
+      "label": "mu_acc #13",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_13_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_13_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-14",
+      "username": "tmp_dc34hae76rk5eukbqc60",
+      "nickname": "Mu #14",
+      "label": "mu_acc #14",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_14_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_14_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-15",
+      "username": "tmp_dc34hae76rk5eukbqc6g",
+      "nickname": "Mu #15",
+      "label": "mu_acc #15",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_15_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_15_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-16",
+      "username": "tmp_dc34hae76rk5eukbqc70",
+      "nickname": "Mu #16",
+      "label": "mu_acc #16",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_16_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_16_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-17",
+      "username": "tmp_dc34hae76rk5eukbqc7g",
+      "nickname": "Mu #17",
+      "label": "mu_acc #17",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_17_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_17_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-18",
+      "username": "tmp_dc34hae76rk5eukbqc80",
+      "nickname": "Mu #18",
+      "label": "mu_acc #18",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_18_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_18_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-19",
+      "username": "tmp_dc34ham76rk5eukbqc8g",
+      "nickname": "Mu #19",
+      "label": "mu_acc #19",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_19_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_19_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    },
+    {
+      "account_id": "ACC-20",
+      "username": "tmp_dc34ham76rk5eukbqc90",
+      "nickname": "Mu #20",
+      "label": "mu_acc #20",
+      "group_name": "Team Mu",
+      "scope": "global",
+      "api_key_ref": "ENV_TCEX_ACC_20_API_KEY",
+      "secret_key_ref": "ENV_TCEX_ACC_20_SECRET_KEY",
+      "initial_capital_vnd": 150000000.0,
+      "deployable_budget_vnd": 90000000.0,
+      "reserve_vnd": 60000000.0
+    }
+  ],
+  "strategies": [
+    {
+      "strategy_id": "STR-001",
+      "name": "Equal-Step Spot Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-01",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-002",
+      "name": "Volatility-Scaled Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-02",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-003",
+      "name": "ATR Adaptive Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-03",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-004",
+      "name": "Session-Boundary Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-04",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-005",
+      "name": "Trend-Filtered Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-05",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-006",
+      "name": "Inventory-Balanced Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-06",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-007",
+      "name": "Asymmetric Bid-Heavy Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-07",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-008",
+      "name": "Asymmetric Ask-Heavy Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-08",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-009",
+      "name": "Range-Expansion Grid",
+      "family": "Grid / DCA",
+      "account_id": "ACC-09",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-010",
+      "name": "Grid Pause-and-Resume",
+      "family": "Grid / DCA",
+      "account_id": "ACC-10",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-011",
+      "name": "Bollinger Lower-Band Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-11",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-012",
+      "name": "RSI Oversold Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-12",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-013",
+      "name": "Z-Score Fair-Value Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-13",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-014",
+      "name": "VWAP Deviation Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-14",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-015",
+      "name": "Keltner Channel Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-15",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-016",
+      "name": "Range-Extreme Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-16",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-017",
+      "name": "Stochastic Oversold Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-17",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-018",
+      "name": "Volume-Confirmed Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-18",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-019",
+      "name": "Failed-Breakout Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-19",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-020",
+      "name": "Multi-Signal Mean Reversion",
+      "family": "Mean Reversion",
+      "account_id": "ACC-20",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-021",
+      "name": "EMA Pullback Continuation",
+      "family": "Trend Following",
+      "account_id": "ACC-05",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-022",
+      "name": "Dual-EMA Trend Alignment",
+      "family": "Trend Following",
+      "account_id": "ACC-06",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-023",
+      "name": "ADX Trend Strength",
+      "family": "Trend Following",
+      "account_id": "ACC-07",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-024",
+      "name": "Supertrend Pullback",
+      "family": "Trend Following",
+      "account_id": "ACC-08",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-025",
+      "name": "Donchian Trend Continuation",
+      "family": "Trend Following",
+      "account_id": "ACC-09",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-026",
+      "name": "Higher-High Higher-Low Trend",
+      "family": "Trend Following",
+      "account_id": "ACC-10",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-027",
+      "name": "Moving-Average Slope Trend",
+      "family": "Trend Following",
+      "account_id": "ACC-11",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-028",
+      "name": "Trend + Volume Confirmation",
+      "family": "Trend Following",
+      "account_id": "ACC-12",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-029",
+      "name": "Multi-Timeframe Trend Filter",
+      "family": "Trend Following",
+      "account_id": "ACC-13",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-030",
+      "name": "Volatility-Adjusted Trend",
+      "family": "Trend Following",
+      "account_id": "ACC-14",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-031",
+      "name": "ROC Acceleration Pullback",
+      "family": "Momentum",
+      "account_id": "ACC-15",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-032",
+      "name": "MACD Histogram Momentum",
+      "family": "Momentum",
+      "account_id": "ACC-16",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-033",
+      "name": "RSI Momentum Continuation",
+      "family": "Momentum",
+      "account_id": "ACC-17",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-034",
+      "name": "Volume-Weighted Momentum",
+      "family": "Momentum",
+      "account_id": "ACC-18",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-035",
+      "name": "Relative Strength Burst",
+      "family": "Momentum",
+      "account_id": "ACC-19",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-036",
+      "name": "Short-Term Momentum Rotation",
+      "family": "Momentum",
+      "account_id": "ACC-20",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-037",
+      "name": "Momentum Compression Release",
+      "family": "Momentum",
+      "account_id": "ACC-01",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-038",
+      "name": "Momentum Retest Entry",
+      "family": "Momentum",
+      "account_id": "ACC-02",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-039",
+      "name": "Multi-Timeframe Momentum",
+      "family": "Momentum",
+      "account_id": "ACC-03",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-040",
+      "name": "Volatility-Normalized Momentum",
+      "family": "Momentum",
+      "account_id": "ACC-04",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-041",
+      "name": "Resistance Retest Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-09",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-042",
+      "name": "Support Breakdown Retest",
+      "family": "Breakout",
+      "account_id": "ACC-10",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-043",
+      "name": "Donchian Channel Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-11",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-044",
+      "name": "Opening-Range Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-12",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-045",
+      "name": "Volatility Compression Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-13",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-046",
+      "name": "Volume Expansion Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-14",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-047",
+      "name": "ATR Buffer Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-15",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-048",
+      "name": "Failed-Breakout Reversal Filter",
+      "family": "Breakout",
+      "account_id": "ACC-16",
+      "role": "Core",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-049",
+      "name": "Multi-Timeframe Level Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-17",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-050",
+      "name": "Range Close Confirmation Breakout",
+      "family": "Breakout",
+      "account_id": "ACC-18",
+      "role": "Core",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-051",
+      "name": "Best-Bid Queue Rebate Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-19",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-052",
+      "name": "Best-Ask Queue Rebate Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-20",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-053",
+      "name": "Spread Capture with Inventory Cap",
+      "family": "Scalping",
+      "account_id": "ACC-01",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-054",
+      "name": "Micro Pullback Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-02",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-055",
+      "name": "Short-Horizon VWAP Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-03",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-056",
+      "name": "Quote-Refresh Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-04",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-057",
+      "name": "Queue-Ahead Decay Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-05",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-058",
+      "name": "Trade-Impulse Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-06",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-059",
+      "name": "Volatility-Gated Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-07",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-060",
+      "name": "Latency-Aware Passive Scalping",
+      "family": "Scalping",
+      "account_id": "ACC-08",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-061",
+      "name": "Top-of-Book Imbalance",
+      "family": "Order Flow",
+      "account_id": "ACC-13",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-062",
+      "name": "Multi-Level Book Imbalance",
+      "family": "Order Flow",
+      "account_id": "ACC-14",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-063",
+      "name": "Bid Depth Accumulation",
+      "family": "Order Flow",
+      "account_id": "ACC-15",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-064",
+      "name": "Ask Depth Depletion",
+      "family": "Order Flow",
+      "account_id": "ACC-16",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-065",
+      "name": "Order-Flow Delta Confirmation",
+      "family": "Order Flow",
+      "account_id": "ACC-17",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-066",
+      "name": "Trade-Through Pressure",
+      "family": "Order Flow",
+      "account_id": "ACC-18",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-067",
+      "name": "Book Replenishment Signal",
+      "family": "Order Flow",
+      "account_id": "ACC-19",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-068",
+      "name": "Liquidity Vacuum Detection",
+      "family": "Order Flow",
+      "account_id": "ACC-20",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-069",
+      "name": "Imbalance Persistence",
+      "family": "Order Flow",
+      "account_id": "ACC-01",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-070",
+      "name": "Spoof-Resistant Flow Filter",
+      "family": "Order Flow",
+      "account_id": "ACC-02",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "ACTIVE",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-071",
+      "name": "Synchronized Best-Bid/Ask Spread",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-03",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-072",
+      "name": "Cross-Venue Midprice Dislocation",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-04",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-073",
+      "name": "Lead-Lag Price Catch-Up",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-05",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-074",
+      "name": "Venue Premium Mean Reversion",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-06",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-075",
+      "name": "Cross-Venue Bid Lift Arbitrage",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-07",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-076",
+      "name": "Cross-Venue Ask Hit Arbitrage",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-08",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-077",
+      "name": "Latency-Adjusted Dislocation",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-09",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-078",
+      "name": "Fee-Adjusted Net Spread",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-10",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-079",
+      "name": "Inventory-Rebalancing Arbitrage",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-11",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-080",
+      "name": "Partial-Fill-Aware Arbitrage",
+      "family": "Cross-Exchange Arbitrage",
+      "account_id": "ACC-12",
+      "role": "Conditional",
+      "allocated_capital_vnd": 22500000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-081",
+      "name": "Macro Calendar Volatility Filter",
+      "family": "News / Event",
+      "account_id": "ACC-17",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-082",
+      "name": "US CPI Event Response",
+      "family": "News / Event",
+      "account_id": "ACC-18",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-083",
+      "name": "FOMC Event Response",
+      "family": "News / Event",
+      "account_id": "ACC-19",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-084",
+      "name": "ETF Flow Headline Filter",
+      "family": "News / Event",
+      "account_id": "ACC-20",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-085",
+      "name": "Regulatory News Reaction",
+      "family": "News / Event",
+      "account_id": "ACC-01",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-086",
+      "name": "Exchange Incident Event Filter",
+      "family": "News / Event",
+      "account_id": "ACC-02",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-087",
+      "name": "BTC Network Event Filter",
+      "family": "News / Event",
+      "account_id": "ACC-03",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-088",
+      "name": "Liquidation-Event Response",
+      "family": "News / Event",
+      "account_id": "ACC-04",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-089",
+      "name": "Timestamped Headline Momentum",
+      "family": "News / Event",
+      "account_id": "ACC-05",
+      "role": "Conditional",
+      "allocated_capital_vnd": 18000000.0,
+      "status": "DISABLED_DATA_REQUIREMENT",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-090",
+      "name": "Post-Event Reversion",
+      "family": "News / Event",
+      "account_id": "ACC-06",
+      "role": "Conditional",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-091",
+      "name": "FOMO Chase Impulse Cohort",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-01",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-092",
+      "name": "Revenge-Trading Escalation",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-02",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-093",
+      "name": "Loss-Aversion Hold Cohort",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-03",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-094",
+      "name": "Overconfidence Concentration",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-04",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-095",
+      "name": "Random Entry Baseline",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-05",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-096",
+      "name": "Social-Signal Herding",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-06",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-097",
+      "name": "Cancel-Replace Churn",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-07",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-098",
+      "name": "Averaging-Down Without Signal",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-08",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-099",
+      "name": "Take-Profit Too Early",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-09",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    },
+    {
+      "strategy_id": "STR-100",
+      "name": "Rule-Violation Propensity Overlay",
+      "family": "Behavioral / Gambling",
+      "account_id": "ACC-10",
+      "role": "Paper only",
+      "allocated_capital_vnd": 0.0,
+      "status": "PAPER_ONLY",
+      "parameters": {
+        "symbol": "BTC_VND",
+        "order_type": "LIMIT",
+        "min_order_qty_btc": 0.01,
+        "order_size_btc": 0.01,
+        "cooldown_sec": 5.0,
+        "spacing_pct": 0.003,
+        "atr_multiplier": 1.5,
+        "rsi_period": 14
+      }
+    }
+  ],
+  "risk": {
+    "max_open_orders_per_strategy": 5,
+    "max_open_orders_per_account": 20,
+    "min_order_qty_btc": 0.01,
+    "max_order_qty_btc": 1.0,
+    "min_notional_vnd": 10000000.0,
+    "max_daily_drawdown_pct": 10.0,
+    "stale_market_data_threshold_sec": 30.0,
+    "duplicate_window_sec": 3.0,
+    "emergency_stop": false
+  },
+  "data_sources": {
+    "tcex_rest_url": "https://simulation.the20.sg",
+    "tcex_ws_url": "wss://simulation.the20.sg",
+    "tcex_market_symbol": "BTC_VND",
+    "external_reference_enabled": false,
+    "external_reference_venues": [
+      "binance",
+      "okx"
+    ]
+  },
+  "monitoring": {
+    "log_dir": "logs",
+    "log_level": "INFO",
+    "heartbeat_interval_sec": 10.0,
+    "audit_trail": true,
+    "max_log_size_mb": 20,
+    "backup_count": 10
+  },
+  "storage": {
+    "database_type": "sqlite",
+    "database_path": "data/tcex_engine.db"
+  }
+}

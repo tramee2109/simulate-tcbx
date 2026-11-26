@@ -1,5 +1,37 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyd
+
+# Environment variables and credentials
+*.env
+.env*
+!*.env.example
+credential_template.env
+
+# Account CSVs containing API keys / secrets / credentials
+*.csv
+*new-temp-accounts*
+*accounts*.csv
+
+# Runtime database, logs, and reporting artifacts
+*.db
+*.sqlite
+*.sqlite3
+data/
+local/data/
+logs/
+local/logs/
+*.log
+reports/
+local/reports/
+
+# Operating System files
 .DS_Store
-.env
+Thumbs.db
+
+# Virtual environments
+.venv/
+venv/
+ENV/
