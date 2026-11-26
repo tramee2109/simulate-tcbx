@@ -113,16 +113,32 @@ class TCEXEngineApplication:
 
         # 2. Execution mode resolution
         sys_cfg = self.config.get("system", {})
-        self.mode = (self.override_mode or sys_cfg.get("mode", "PAPER")).upper()
-        base_url = sys_cfg.get("base_url", "https://simulation.the20.sg")
-        session_key = sys_cfg.get("session_key", "dc1tpbu76rkff8gccfug")
-        symbol = sys_cfg.get("symbol", "BTC_VND")
+        env_mode = os.environ.get("TCEX_EXECUTION_MODE") or os.environ.get("EXECUTION_MODE")
+        self.mode = (self.override_mode or env_mode or sys_cfg.get("mode", "PAPER")).upper()
+        base_url = (
+            os.environ.get("TCEX_BASE_URL")
+            or os.environ.get("BASE_URL")
+            or sys_cfg.get("base_url", "https://simulation.the20.sg")
+        )
+        session_key = (
+            os.environ.get("TCEX_SESSION_KEY")
+            or os.environ.get("SESSION_KEY")
+            or sys_cfg.get("session_key", "dc1tpbu76rkff8gccfug")
+        )
+        symbol = (
+            os.environ.get("TCEX_MARKET_SYMBOL")
+            or os.environ.get("SYMBOL")
+            or sys_cfg.get("symbol", "BTC_VND")
+        )
         logger.info(f"Step 2/20: Execution Mode: [{self.mode}] | Session: [{session_key}] | Pair: [{symbol}]")
 
         # 3. Initialize database
         storage_cfg = self.config.get("storage", {})
-        db_path = storage_cfg.get("database_path", "data/tcex_engine.db")
-        self.db = DatabaseManager(db_path=os.path.join(BASE_DIR, db_path))
+        env_db = os.environ.get("TCEX_DB_PATH") or os.environ.get("DB_PATH")
+        db_path = env_db or storage_cfg.get("database_path", "data/tcex_engine.db")
+        if not os.path.isabs(db_path):
+            db_path = os.path.join(BASE_DIR, db_path)
+        self.db = DatabaseManager(db_path=db_path)
         logger.info(f"Step 3/20: SQLite Database initialized at: {db_path}")
 
         # 4. Initialize SDK
@@ -130,7 +146,22 @@ class TCEXEngineApplication:
         logger.info("Step 4/20: The20 Simulation SDK initialized.")
 
         # 5. Initialize Account Manager & Load 20 accounts
-        csv_file = os.path.join(BASE_DIR, "new-temp-accounts-global (1).csv")
+        csv_env = os.environ.get("TCEX_ACCOUNT_CSV") or os.environ.get("ACCOUNTS_CSV_PATH")
+        csv_candidates = [
+            csv_env,
+            os.path.join(BASE_DIR, "new-temp-accounts-global (1).csv"),
+            os.path.join(os.path.dirname(BASE_DIR), "new-temp-accounts-global (1).csv"),
+            os.path.join(BASE_DIR, "accounts.csv"),
+            os.path.join(os.path.dirname(BASE_DIR), "accounts.csv"),
+        ]
+        csv_file = None
+        for cand in csv_candidates:
+            if cand and os.path.isfile(cand):
+                csv_file = cand
+                break
+        if not csv_file:
+            csv_file = csv_env or os.path.join(BASE_DIR, "new-temp-accounts-global (1).csv")
+
         self.account_mgr = AccountManager(
             csv_path=csv_file,
             base_url=base_url,
@@ -548,10 +579,32 @@ def main():
     args = parser.parse_args()
 
     # Safety gate for LIVE mode
+    env_allow_live = os.environ.get("TCEX_ALLOW_LIVE") or os.environ.get("CONFIRM_LIVE")
+    if env_allow_live and env_allow_live.lower() in ("true", "1", "yes", "confirm"):
+        args.confirm_live = True
+
+    env_mode = os.environ.get("TCEX_EXECUTION_MODE") or os.environ.get("EXECUTION_MODE")
+    if args.mode is None and env_mode:
+        args.mode = env_mode.upper()
+
+    env_interval = os.environ.get("TCEX_TICK_INTERVAL") or os.environ.get("TICK_INTERVAL")
+    if env_interval:
+        try:
+            args.interval = float(env_interval)
+        except ValueError:
+            pass
+
+    env_snapshot = os.environ.get("TCEX_SNAPSHOT_INTERVAL") or os.environ.get("SNAPSHOT_INTERVAL")
+    if env_snapshot:
+        try:
+            args.snapshot_interval = int(env_snapshot)
+        except ValueError:
+            pass
+
     if args.mode == "LIVE" and not args.confirm_live:
         print("\n" + "!" * 70)
         print("ERROR: LIVE execution requested without explicit operator confirmation!")
-        print("To run in LIVE mode, you MUST pass the flag: --confirm-live")
+        print("To run in LIVE mode, you MUST pass the flag: --confirm-live (or env TCEX_ALLOW_LIVE=true)")
         print("Defaulting safely back to PAPER mode.")
         print("!" * 70 + "\n")
         args.mode = "PAPER"

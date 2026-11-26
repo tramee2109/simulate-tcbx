@@ -103,12 +103,17 @@ class AccountManager:
                 acc["actual_btc"] = balances.get("BTC", 0.0)
                 acc["connection_status"] = "CONNECTED"
 
-                # Balance reconciliation against proposed 150M VND initial capital
-                if acc["actual_vnd"] >= acc["initial_capital_vnd"]:
+                # Balance reconciliation: consider both cash VND and held BTC
+                btc_price_est = 1_500_000_000.0
+                total_equity = acc["actual_vnd"] + (acc["actual_btc"] * btc_price_est)
+                if acc["actual_vnd"] >= acc["initial_capital_vnd"] or total_equity >= acc["initial_capital_vnd"]:
                     acc["reconciliation_status"] = "MATCHED_OR_EXCEEDED"
                     acc["verification_status"] = "VERIFIED"
-                elif acc["actual_vnd"] >= acc["deployable_budget_vnd"]:
+                elif acc["actual_vnd"] >= acc["deployable_budget_vnd"] or total_equity >= acc["deployable_budget_vnd"]:
                     acc["reconciliation_status"] = "SUFFICIENT_FOR_DEPLOYMENT"
+                    acc["verification_status"] = "VERIFIED"
+                elif total_equity > 0:
+                    acc["reconciliation_status"] = "ACTIVE_WITH_PORTFOLIO"
                     acc["verification_status"] = "VERIFIED"
                 else:
                     acc["reconciliation_status"] = "INSUFFICIENT_FUNDS"

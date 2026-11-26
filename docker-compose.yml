@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  simulate-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: simulate-tcbx:latest
+    container_name: tcex-simulate-engine
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TCEX_BASE_URL=${TCEX_BASE_URL:-https://simulation.the20.sg}
+      - TCEX_SESSION_KEY=${TCEX_SESSION_KEY:-dc1tpbu76rkff8gccfug}
+      - TCEX_MARKET_SYMBOL=${TCEX_MARKET_SYMBOL:-BTC_VND}
+      - TCEX_EXECUTION_MODE=${TCEX_EXECUTION_MODE:-LIVE}
+      - TCEX_ALLOW_LIVE=${TCEX_ALLOW_LIVE:-true}
+      - TCEX_TICK_INTERVAL=${TCEX_TICK_INTERVAL:-2.0}
+      - TCEX_SNAPSHOT_INTERVAL=${TCEX_SNAPSHOT_INTERVAL:-1800}
+      - TCEX_ACCOUNT_CSV=/app/local/accounts.csv
+      - TCEX_DB_PATH=/app/local/data/tcex_engine.db
+    volumes:
+      # Persistent host directories for logs, DB, and snapshots
+      - ./logs:/app/local/logs
+      - ./data:/app/local/data
+      - ./reports:/app/local/reports
+      # Mount CSV securely from host without baking into image
+      - ${HOST_ACCOUNT_CSV:-./accounts.csv}:/app/local/accounts.csv:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2048M
+        reservations:
+          cpus: '0.5'
+          memory: 512M

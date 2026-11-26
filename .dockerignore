@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+
+# Environment & Credentials
+.env
+.env.*
+*.env
+local/credential_template.env
+credential_template.env
+
+# Account CSVs containing API Keys / Secrets
+*.csv
+*new-temp-accounts*
+*accounts*.csv
+local/*.csv
+
+# Local runtime data, database & logs
+data/
+local/data/
+*.db
+*.sqlite*
+logs/
+local/logs/
+*.log
+reports/
+local/reports/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Excel & scratch files
+*.xlsx
+*.xls
+scratch/

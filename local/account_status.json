@@ -104,8 +104,8 @@
     "actual_vnd": 88392196.72500001,
     "actual_btc": 0.04,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   },
   {
     "account_id": "ACC-10",
@@ -128,8 +128,8 @@
     "actual_vnd": 57668670.63000003,
     "actual_btc": 0.06,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   },
   {
     "account_id": "ACC-12",
@@ -140,8 +140,8 @@
     "actual_vnd": 57591361.31779999,
     "actual_btc": 0.06,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   },
   {
     "account_id": "ACC-13",
@@ -176,8 +176,8 @@
     "actual_vnd": 57574599.71239998,
     "actual_btc": 0.06,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   },
   {
     "account_id": "ACC-16",
@@ -188,8 +188,8 @@
     "actual_vnd": 88368749.31,
     "actual_btc": 0.04,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   },
   {
     "account_id": "ACC-17",
@@ -200,8 +200,8 @@
     "actual_vnd": 73168463.63999994,
     "actual_btc": 0.05,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   },
   {
     "account_id": "ACC-18",
@@ -236,7 +236,7 @@
     "actual_vnd": 57565420.66,
     "actual_btc": 0.06,
     "connection_status": "CONNECTED",
-    "verification_status": "VERIFIED",
-    "reconciliation_status": "SUFFICIENT_FOR_DEPLOYMENT"
+    "verification_status": "ACCOUNT_UNVERIFIED",
+    "reconciliation_status": "INSUFFICIENT_FUNDS"
   }
 ]
