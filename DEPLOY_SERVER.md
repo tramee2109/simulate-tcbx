@@ -19,20 +19,25 @@ Tài liệu này hướng dẫn chi tiết cách đưa mã nguồn từ reposito
 
 ## 2. Các bước triển khai
 
-### Bước 1: Clone mã nguồn từ GitHub
-Đăng nhập vào server và clone repo:
+### Bước 1: Tạo thư mục đích và phân quyền trên Server
+Đăng nhập vào server (qua SSH) và chạy lệnh:
 ```bash
-git clone https://github.com/tramee2109/simulate-tcbx.git
-cd simulate-tcbx
+# Tạo thư mục đích với quyền sở hữu của user hiện tại
+sudo mkdir -p /var/www/simulation_tcex_trader/mu
+sudo chown -R $USER:$USER /var/www/simulation_tcex_trader
+
+# Clone mã nguồn trực tiếp vào thư mục /var/www/simulation_tcex_trader/mu
+git clone https://github.com/tramee2109/simulate-tcbx.git /var/www/simulation_tcex_trader/mu
+cd /var/www/simulation_tcex_trader/mu
 ```
 
 ### Bước 2: Tải file danh sách tài khoản (`accounts.csv`) lên Server
 Do các file chứa API keys được chặn trên Git theo chính sách bảo mật, bạn cần copy file tài khoản lên server vào thư mục dự án:
 ```bash
-# Từ máy tính của bạn (PowerShell):
-scp -i ~/.ssh/id_ed25519 "E:\My\the20\simulate-sdk\new-temp-accounts-global (1).csv" ubuntu@13.213.156.53:~/simulate-tcbx/accounts.csv
+# Chạy lệnh này từ PowerShell trên máy tính cá nhân của bạn:
+scp -i C:\Users\DELL\.ssh\id_ed25519 "E:\My\the20\simulate-sdk\new-temp-accounts-global (1).csv" ubuntu@13.213.156.53:/var/www/simulation_tcex_trader/mu/accounts.csv
 ```
-*(Hoặc dùng nano/vi trên server để tạo file `accounts.csv` và dán nội dung danh sách 20 tài khoản vào)*.
+*(Hoặc dùng nano/vi trên server: `nano /var/www/simulation_tcex_trader/mu/accounts.csv` và dán nội dung vào)*.
 
 ### Bước 3: Tạo file cấu hình môi trường `.env`
 Sao chép từ `.env.example`:
